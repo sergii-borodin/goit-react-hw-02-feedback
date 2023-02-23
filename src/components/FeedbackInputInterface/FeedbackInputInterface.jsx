@@ -8,7 +8,8 @@ const FeedbackInputInterface = ({ onLeaveFeedback, options }) => {
     return (<>
         <ControlsContainer>
             {optionNames.map(optionName =>
-                <li key={optionName}><Button name={optionName} onClick={(event) => onLeaveFeedback(event)}>{ optionName}</Button></li>
+                <li key={optionName}><Button name={optionName} onClick={(event) => onLeaveFeedback(event)}>{ optionName.charAt(0).toUpperCase()
+  + optionName.slice(1)}</Button></li>
                 )}
         </ControlsContainer></>
   )
