@@ -1,26 +1,31 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { StatsContainer } from './Statistics.styled';
 
 const Statistics = ({ stats, total, positivePercentage }) => {
     const { good, neutral, bad } = stats;
   return (
-      <StatsContainer>
-          <h2>Statistics</h2>
-          <ul>
-              <li>{good}</li>
-              <li>{neutral}</li>
-              <li>{bad}</li>
-              <li>{total}</li>
-              <li>{positivePercentage}</li>
-
-              
-              
-          </ul>
-    </StatsContainer>
+      <>
+          <StatsContainer>
+              <li>good : {good}</li>
+              <li>neutral : {neutral}</li>
+              <li>bad : {bad}</li>
+              <li>total : {total}</li>
+              <li>Positive percentage : {positivePercentage.toFixed(2)}%</li>
+          </StatsContainer>
+    </>
   )
 }
 
-// Statistics.propTypes = {}
+Statistics.propTypes = {
+  stats: PropTypes.shape({
+        good: PropTypes.number.isRequired,
+        neutral: PropTypes.number.isRequired,
+        bad: PropTypes.number.isRequired,
+  }),
+  total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired
+
+}
 
 export default Statistics
