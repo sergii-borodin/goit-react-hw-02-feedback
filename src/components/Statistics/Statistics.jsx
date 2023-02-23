@@ -6,13 +6,13 @@ const Statistics = ({ stats, total, positivePercentage }) => {
     const { good, neutral, bad } = stats;
   return (
       <>
-          <StatsContainer>
+          {total ? <StatsContainer>
               <li>good : {good}</li>
               <li>neutral : {neutral}</li>
               <li>bad : {bad}</li>
               <li>total : {total}</li>
               <li>Positive percentage : {positivePercentage.toFixed(2)}%</li>
-          </StatsContainer>
+          </StatsContainer> : <p>No feedback given</p>}
     </>
   )
 }
@@ -24,7 +24,7 @@ Statistics.propTypes = {
         bad: PropTypes.number.isRequired,
   }),
   total: PropTypes.number.isRequired,
-    positivePercentage: PropTypes.number.isRequired
+  positivePercentage: PropTypes.number.isRequired
 
 }
 
