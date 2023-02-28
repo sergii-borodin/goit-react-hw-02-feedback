@@ -8,5 +8,10 @@ export const ControlsContainer = styled.ul`
 `;
 
 export const Button = styled.button`
+padding: 0 10px;
   border-radius: 10px;
+  &:hover {
+    color: white;
+    background-color: tomato;
+  }
 `;
